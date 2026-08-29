@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import requests
@@ -7,6 +8,19 @@ import os
 load_dotenv()
 
 app = FastAPI()
+@app.get("/")
+def home():
+    return FileResponse("index.html")
+
+
+@app.get("/style.css")
+def style():
+    return FileResponse("style.css")
+
+
+@app.get("/script.js")
+def script():
+    return FileResponse("script.js")
 
 app.add_middleware(
     CORSMiddleware,
