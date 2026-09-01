@@ -1,6 +1,6 @@
 GitHub Profile Searcher
 
-🌐 Live Website
+Live Website
 
 https://github-profile-searcher-six.vercel.app
 
